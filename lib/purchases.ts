@@ -12,7 +12,7 @@ if (Platform.OS !== "web") {
 }
 
 // RevenueCat API key (Android-only for now, iOS key added later)
-const REVENUECAT_ANDROID_KEY = "YOUR_REVENUECAT_ANDROID_KEY";
+const REVENUECAT_ANDROID_KEY = "goog_VNNjDgXudACTdgvtPHDecfQZivN";
 
 const ENTITLEMENT_ID = "premium";
 
