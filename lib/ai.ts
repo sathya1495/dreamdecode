@@ -2,7 +2,11 @@ import { DreamInterpretation } from "@/types";
 import Constants from "expo-constants";
 
 // Groq API configuration — key loaded from EAS Secrets / env vars
-const GROQ_API_KEY = Constants.expoConfig?.extra?.groqApiKey || process.env.EXPO_PUBLIC_GROQ_API_KEY || "";
+// EAS Secrets automatically injects EXPO_PUBLIC_GROQ_API_KEY at build time
+const GROQ_API_KEY =
+  process.env.EXPO_PUBLIC_GROQ_API_KEY ||
+  Constants.expoConfig?.extra?.groqApiKey ||
+  "";
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
 const GROQ_MODEL = "llama-3.3-70b-versatile";
 

@@ -37,7 +37,7 @@ export default function OnboardingScreen() {
   }, [fadeAnim]);
 
   function goNext() {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
     if (currentPage < 2) {
       const next = currentPage + 1;
       setCurrentPage(next);
@@ -48,28 +48,37 @@ export default function OnboardingScreen() {
   }
 
   async function finishOnboarding() {
-    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+    Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success).catch(() => {});
 
-    // Save preferences
-    await updateUserProfile({
-      dreamFrequency: selectedFrequency,
-      interests: selectedInterests,
-      onboardingCompleted: true,
-    });
-    await setOnboardingComplete();
+    try {
+      // Save preferences
+      await updateUserProfile({
+        dreamFrequency: selectedFrequency,
+        interests: selectedInterests,
+        onboardingCompleted: true,
+      });
+      await setOnboardingComplete();
+    } catch (e) {
+      console.error("Failed to save onboarding preferences:", e);
+    }
+
     setOnboardingDone(true);
 
-    // Request notification permission & schedule
-    const granted = await requestNotificationPermissions();
-    if (granted) {
-      await scheduleMorningReminder();
+    // Request notification permission & schedule (non-blocking)
+    try {
+      const granted = await requestNotificationPermissions();
+      if (granted) {
+        await scheduleMorningReminder();
+      }
+    } catch (e) {
+      console.warn("Notification setup failed:", e);
     }
 
     router.replace("/(tabs)");
   }
 
   function toggleInterest(interest: string) {
-    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
     setSelectedInterests((prev) => {
       if (prev.includes(interest)) {
         return prev.filter((i) => i !== interest);
@@ -118,7 +127,7 @@ export default function OnboardingScreen() {
           <Pressable
             key={freq.key}
             onPress={() => {
-              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light).catch(() => {});
               setSelectedFrequency(freq.key);
             }}
             className="flex-row items-center p-4 rounded-xl"

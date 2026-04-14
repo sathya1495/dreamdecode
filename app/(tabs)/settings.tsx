@@ -71,11 +71,24 @@ export default function SettingsScreen() {
   async function handleExport() {
     try {
       const allDreams = await getDreams(10000, 0);
+      if (allDreams.length === 0) {
+        Alert.alert("No Dreams", "You haven't logged any dreams yet.");
+        return;
+      }
       const json = JSON.stringify(allDreams, null, 2);
-      // In a real app, use expo-sharing + expo-file-system
-      Alert.alert("Export", `Ready to export ${allDreams.length} dreams. This feature will use device sharing in the next update.`);
+      const FileSystem = require('expo-file-system');
+      const Sharing = require('expo-sharing');
+      const fileUri = FileSystem.documentDirectory + 'dreamdecode_export.json';
+      await FileSystem.writeAsStringAsync(fileUri, json, { encoding: FileSystem.EncodingType.UTF8 });
+      const canShare = await Sharing.isAvailableAsync();
+      if (canShare) {
+        await Sharing.shareAsync(fileUri, { mimeType: 'application/json', dialogTitle: 'Export Dreams' });
+      } else {
+        Alert.alert("Exported", `${allDreams.length} dreams saved to app storage.`);
+      }
     } catch (e) {
-      Alert.alert("Error", "Failed to export dreams.");
+      console.warn('Export error:', e);
+      Alert.alert("Error", "Failed to export dreams. Please try again.");
     }
   }
 
@@ -89,8 +102,16 @@ export default function SettingsScreen() {
           text: "Delete Everything",
           style: "destructive",
           onPress: async () => {
-            // In production, implement full data wipe
-            Alert.alert("Deleted", "All data has been cleared. Restart the app.");
+            try {
+              const { getDb } = require('@/lib/database');
+              const db = await getDb();
+              await db.runAsync('DELETE FROM dreams');
+              await db.runAsync('DELETE FROM user_profile');
+              Alert.alert("Deleted", "All data has been cleared. Please restart the app for a fresh start.");
+            } catch (e) {
+              console.warn('Delete all error:', e);
+              Alert.alert("Error", "Failed to delete data. Please try again.");
+            }
           },
         },
       ]

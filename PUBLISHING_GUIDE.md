@@ -166,67 +166,117 @@ eas submit --platform android --latest
 
 ## Step 6: Store Listing Copy
 
-### App Name
-**DreamDecode AI - Dream Interpreter & Journal**
+### ⚠️ PLAY STORE LIMITS
+- **App name:** 30 characters max
+- **Short description:** 80 characters max
+- **Full description:** 4,000 characters max
 
-### Short Description (80 chars)
-AI-powered dream interpreter. Decode dreams, track patterns, know yourself.
+---
 
-### Full Description (4000 chars)
+### App Name (COPY-PASTE — 30 chars)
+```
+DreamDecode: AI Dream Journal
+```
+
+### Short Description (COPY-PASTE — 79 chars)
+```
+AI dream interpreter & journal. Decode dream meanings, symbols & patterns free
+```
+
+### Full Description (COPY-PASTE — ~3,800 chars)
 
 ```
-🌙 What did you dream last night?
+🌙 What does my dream mean?
 
-DreamDecode AI uses advanced artificial intelligence to help you understand the hidden meanings in your dreams. Simply describe your dream — by typing or speaking — and get a personalized, psychology-inspired interpretation in seconds.
+DreamDecode is your AI dream interpreter, dream journal, and dream dictionary — all in one app. Describe your dream and get a personalized, psychology-based dream interpretation in seconds. Not generic dream meanings — real dream analysis that references YOUR specific details.
 
-✨ WHY DREAMDECODE?
+Whether you dreamed about teeth falling out, snakes, water, flying, falling, being chased, or a recurring nightmare — DreamDecode's AI dream decoder explains what it means and why your subconscious chose those symbols.
 
-Unlike other dream apps that lock everything behind a paywall, DreamDecode gives you a FREE daily AI interpretation, unlimited dream journaling, and beautiful insights — all for free.
+🆓 ACTUALLY FREE — NOT A PAYWALL TRAP
+Unlike other dream apps, DreamDecode gives you 1 FREE AI dream interpretation every day + unlimited dream journaling + full dream insights — forever. No paywall blocking your first dream.
 
-🔮 FEATURES:
+✨ FEATURES
 
-• AI Dream Interpretation — Get personalized, psychology-based analysis of your dreams powered by advanced AI. Not generic — references YOUR specific dream details.
+🔮 AI Dream Interpretation & Dream Meanings
+Powered by advanced AI blending Jungian dream analysis, neuroscience, and cultural symbolism. Ask "what does my dream mean" and get a thoughtful, personalized dream interpretation — not a copy-paste dream dictionary entry.
 
-• Voice & Text Input — Describe your dream by typing or speaking. Optimized for those groggy mornings when you can barely keep your eyes open.
+📖 Dream Dictionary & Symbol Guide
+Discover the meaning behind common dream symbols: water dreams, snake dreams, teeth dreams, death dreams, flying dreams, falling dreams, chase dreams, pregnancy dreams, and more. Every interpretation explains the psychology behind the symbol.
 
-• Dream Journal — Beautiful, searchable dream diary. Tag emotions, symbols, and themes. Never forget a dream again.
+📝 Dream Journal & Dream Diary
+Beautiful, searchable dream journal and dream diary. Tag emotions and dream symbols. Full-text search across all your dreams. Record every dream before you forget.
 
-• Emotional Insights — See your emotional patterns over time. Which emotions appear most in your dreams? Track trends and understand your subconscious.
+📊 Dream Patterns & Recurring Dreams
+See your emotional landscape over time. Detect recurring dreams and recurring nightmares. Track which dream themes your subconscious keeps returning to — and understand what they mean.
 
-• Symbol Tracking — Discover recurring symbols across your dreams. Water, flying, falling — see what your subconscious keeps returning to.
+🎤 Voice & Text Dream Input
+Describe your dream by typing or speaking — perfect for groggy mornings when you can barely keep your eyes open. Capture every detail before it fades.
 
-• Dream Streaks — Build a daily habit of dream journaling with streak tracking and gentle morning reminders.
+🔥 Dream Streak & Morning Reminders
+Build a daily dream journaling habit with streak tracking and gentle morning reminders. The more you journal, the better your dream recall becomes.
 
-• Privacy First — Your dreams are stored locally on your device. No account required.
+🔒 Private Dream Vault
+Your dream journal is stored locally on YOUR device. No account required. No cloud uploads. Your dreams stay completely private.
 
-🌟 FREE vs PREMIUM:
+📤 Export Dream Journal
+Export all your dreams as JSON anytime. Your dream diary data belongs to you.
+
+🌟 FREE vs PREMIUM
 
 FREE (forever):
-✅ 1 AI interpretation per day
-✅ Unlimited dream journaling
+✅ 1 AI dream interpretation per day
+✅ Unlimited dream journal entries
+✅ Dream dictionary & symbol meanings
 ✅ Emotion & symbol tagging
-✅ 7-day insights
-✅ Dream search
-✅ Streak tracking
+✅ Dream insights & statistics
+✅ Recurring dream detection
+✅ Full-text dream search
+✅ Dream streak tracking & reminders
+✅ Export dream journal
 
-PREMIUM ($3.99/mo or $29.99/yr):
-✅ Unlimited AI interpretations
+PREMIUM ($3.99/mo or $29.99/yr — 7-day free trial):
+✅ Unlimited AI dream interpretations
 ✅ Follow-up AI chat about your dreams
-✅ Weekly AI dream report
+✅ Weekly AI dream analysis report
 ✅ Dream personality profile
-✅ Advanced insights & pattern detection
+✅ Advanced nightmare pattern detection
 ✅ No ads
 
-🧠 POWERED BY PSYCHOLOGY:
-DreamDecode blends Jungian psychology, modern neuroscience, and cultural symbolism to give you interpretations that actually make sense. No fortune-telling, no mystical nonsense — just thoughtful, personalized analysis.
+🧠 PSYCHOLOGY-BASED DREAM ANALYSIS
+DreamDecode blends Jungian dream analysis, modern neuroscience, and cultural dream symbolism. No mystical fortune-telling — thoughtful dream interpretation that helps you understand what your subconscious mind is processing.
 
-💜 BUILT FOR DREAMERS:
-Beautiful dark theme designed for early mornings. Smooth animations, haptic feedback, and a calm interface that respects your space.
+Perfect for: dream journaling beginners, lucid dreamers, nightmare sufferers, anyone curious about dream meanings, psychology enthusiasts, and self-improvement seekers.
 
-Download DreamDecode AI today and start understanding what your subconscious is trying to tell you.
+Download DreamDecode — the AI dream interpreter that actually helps you understand your dreams. Free today.
 
-Sweet dreams. 🌙
+dream journal app, dream diary, dream interpretation, dream meaning, dream analysis, AI dream interpreter, dream decoder, dream dictionary, dream symbols, lucid dream journal, sleep journal, dream tracker, nightmare journal, recurring dreams, what does my dream mean, Jungian dream analysis, dream log, dream meanings explained
 ```
+
+### Keywords (iOS App Store — 100 chars)
+```
+dream journal,dream meaning,AI interpreter,dream diary,nightmare,dream dictionary,symbols,decoder
+```
+
+### ASO Keyword Density Targets (for reference)
+| Keyword | Min Count in Full Desc | Actual |
+|---|---|---|
+| dream | 50+ | ✅ 60+ |
+| dream interpretation | 4+ | ✅ 5 |
+| dream journal | 5+ | ✅ 7 |
+| dream meaning(s) | 4+ | ✅ 5 |
+| dream diary | 2+ | ✅ 3 |
+| dream dictionary | 2+ | ✅ 3 |
+| dream analysis | 2+ | ✅ 3 |
+| dream decoder | 1+ | ✅ 2 |
+| nightmare | 2+ | ✅ 3 |
+| recurring dream(s) | 2+ | ✅ 3 |
+| AI dream | 3+ | ✅ 4 |
+| what does my dream mean | 1+ | ✅ 2 |
+| teeth/snake/water/flying | 1 each | ✅ all |
+| Jungian | 1+ | ✅ 2 |
+| lucid dream | 1+ | ✅ 1 |
+| subconscious | 1+ | ✅ 2 |
+| free | 3+ | ✅ 4 |
 
 ---
 

@@ -3,7 +3,12 @@ import { Platform } from "react-native";
 // Conditionally import react-native-purchases (native only)
 let Purchases: any = null;
 if (Platform.OS !== "web") {
-  Purchases = require("react-native-purchases").default;
+  try {
+    Purchases = require("react-native-purchases").default;
+  } catch (e) {
+    // RevenueCat not installed — purchases disabled
+    console.log("RevenueCat not available, purchases disabled");
+  }
 }
 
 // RevenueCat API key (Android-only for now, iOS key added later)

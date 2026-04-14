@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "DreamDecode AI",
+    "name": "DreamDecode: AI Dream Journal",
     "slug": "DreamDecode",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -15,16 +15,13 @@
     },
     "android": {
       "package": "com.dreamdecode.ai",
+      "versionCode": 11,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#0A0E27"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
       "permissions": [
-        "RECORD_AUDIO",
-        "RECEIVE_BOOT_COMPLETED",
-        "SCHEDULE_EXACT_ALARM"
+        "RECEIVE_BOOT_COMPLETED"
       ]
     },
     "web": {
@@ -35,11 +32,19 @@
     "plugins": [
       "expo-router",
       "expo-sqlite",
+      "expo-navigation-bar",
       [
         "expo-notifications",
         {
           "icon": "./assets/images/notification-icon.png",
           "color": "#7C5CFC"
+        }
+      ],
+      [
+        "react-native-google-mobile-ads",
+        {
+          "androidAppId": "ca-app-pub-2706099218703199~5735003013",
+          "iosAppId": "ca-app-pub-2706099218703199~5735003013"
         }
       ]
     ],

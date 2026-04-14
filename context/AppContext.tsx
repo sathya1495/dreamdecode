@@ -72,12 +72,18 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
       try {
         const obDone = await isOnboardingComplete();
         setOnboardingDone(obDone);
+      } catch (e) {
+        console.error("Onboarding check error:", e);
+        setOnboardingDone(false);
+      }
+
+      try {
         await refreshAll();
       } catch (e) {
-        console.error("Init error:", e);
-      } finally {
-        setIsLoading(false);
+        console.error("Initial data load error:", e);
       }
+
+      setIsLoading(false);
     }
     init();
   }, [refreshAll]);

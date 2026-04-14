@@ -7,9 +7,16 @@ let dbPromise: Promise<SQLite.SQLiteDatabase> | null = null;
 export function getDb(): Promise<SQLite.SQLiteDatabase> {
   if (!dbPromise) {
     dbPromise = (async () => {
-      const database = await SQLite.openDatabaseAsync("dreamdecode.db");
-      await initDb(database);
-      return database;
+      try {
+        const database = await SQLite.openDatabaseAsync("dreamdecode.db");
+        await initDb(database);
+        return database;
+      } catch (e) {
+        console.error("Database initialization error:", e);
+        // Reset promise so it can retry
+        dbPromise = null;
+        throw e;
+      }
     })();
   }
   return dbPromise;
@@ -193,7 +200,27 @@ export async function getUserProfile(): Promise<UserProfile> {
     lastDreamDate: string | null;
   }>("SELECT * FROM user_profile LIMIT 1");
 
-  if (!row) throw new Error("No user profile found");
+  if (!row) {
+    // Create a default profile instead of crashing
+    const id = (await import("expo-crypto")).randomUUID();
+    await database.runAsync(
+      "INSERT INTO user_profile (id, createdAt) VALUES (?, ?)",
+      id,
+      new Date().toISOString()
+    );
+    return {
+      id,
+      displayName: "Dreamer",
+      dreamFrequency: "",
+      interests: [],
+      streakDays: 0,
+      totalDreams: 0,
+      isPremium: false,
+      onboardingCompleted: false,
+      createdAt: new Date().toISOString(),
+      lastDreamDate: null,
+    };
+  }
 
   return {
     id: row.id,

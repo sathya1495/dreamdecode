@@ -10,21 +10,26 @@ let RewardedAdEventType: any = {};
 let BannerAdComponent: any = null;
 
 if (Platform.OS !== "web") {
-  const admob = require("react-native-google-mobile-ads");
-  InterstitialAd = admob.InterstitialAd;
-  RewardedAd = admob.RewardedAd;
-  BannerAdSize = admob.BannerAdSize;
-  TestIds = admob.TestIds;
-  AdEventType = admob.AdEventType;
-  RewardedAdEventType = admob.RewardedAdEventType;
-  BannerAdComponent = admob.BannerAd;
+  try {
+    const admob = require("react-native-google-mobile-ads");
+    InterstitialAd = admob.InterstitialAd;
+    RewardedAd = admob.RewardedAd;
+    BannerAdSize = admob.BannerAdSize;
+    TestIds = admob.TestIds;
+    AdEventType = admob.AdEventType;
+    RewardedAdEventType = admob.RewardedAdEventType;
+    BannerAdComponent = admob.BannerAd;
+  } catch (e) {
+    // AdMob not installed — ads disabled
+    console.log("AdMob not available, ads disabled");
+  }
 }
 
 // Use test IDs in development, replace with real IDs for production
 const AD_UNITS = {
-  banner: __DEV__ ? (TestIds.BANNER || "") : "ca-app-pub-XXXXXXXX/YYYYYYYY",
-  interstitial: __DEV__ ? (TestIds.INTERSTITIAL || "") : "ca-app-pub-XXXXXXXX/YYYYYYYY",
-  rewarded: __DEV__ ? (TestIds.REWARDED || "") : "ca-app-pub-XXXXXXXX/YYYYYYYY",
+  banner: __DEV__ ? (TestIds.BANNER || "") : "ca-app-pub-2706099218703199/6471380516",
+  interstitial: __DEV__ ? (TestIds.INTERSTITIAL || "") : "ca-app-pub-2706099218703199/6471380516",
+  rewarded: __DEV__ ? (TestIds.REWARDED || "") : "ca-app-pub-2706099218703199/6471380516",
 };
 
 // Pre-load interstitial
