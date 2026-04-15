@@ -167,14 +167,24 @@ export default function SettingsScreen() {
           <SettingsRow label="Restore purchases" subtitle="Restore a previous subscription" />
         </Pressable>
 
+        {/* Feedback */}
+        <SectionHeader title="Feedback" />
+        <Pressable onPress={() => Linking.openURL("mailto:sathya149515@gmail.com?subject=DreamDecode%20Feedback&body=Hi%20DreamDecode%20team%2C%0A%0A")}>
+          <SettingsRow label="Send Feedback 💬" subtitle="Report bugs or suggest features" />
+        </Pressable>
+
         {/* About */}
         <SectionHeader title="About" />
-        <Pressable onPress={() => Linking.openURL("https://apps.apple.com/app/dreamdecode-ai")}>
+        <Pressable onPress={() => Linking.openURL("https://play.google.com/store/apps/details?id=com.dreamdecode.ai")}>
           <SettingsRow label="Rate DreamDecode ⭐" subtitle="Help us reach more dreamers" />
         </Pressable>
-        <SettingsRow label="Privacy Policy" subtitle="How we handle your data" />
-        <SettingsRow label="Terms of Service" subtitle="Usage terms" />
-        <SettingsRow label="Version" subtitle="1.0.0" />
+        <Pressable onPress={() => Linking.openURL("https://sathya1495.github.io/dreamdecode/privacy-policy.html")}>
+          <SettingsRow label="Privacy Policy" subtitle="How we handle your data" />
+        </Pressable>
+        <Pressable onPress={() => Linking.openURL("https://sathya1495.github.io/dreamdecode/privacy-policy.html")}>
+          <SettingsRow label="Terms of Service" subtitle="Usage terms" />
+        </Pressable>
+        <SettingsRow label="Version" subtitle="1.1.0" />
 
         {/* Data */}
         <SectionHeader title="Data" />

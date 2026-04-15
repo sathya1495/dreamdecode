@@ -2,7 +2,7 @@
   "expo": {
     "name": "DreamDecode: AI Dream Journal",
     "slug": "DreamDecode",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "dreamdecode",
@@ -15,7 +15,7 @@
     },
     "android": {
       "package": "com.dreamdecode.ai",
-      "versionCode": 11,
+      "versionCode": 14,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#0A0E27"
